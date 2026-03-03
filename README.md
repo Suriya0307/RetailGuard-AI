@@ -1,163 +1,367 @@
-# 🛍️ Shoplifting Detection using YOLO Pose Estimation
+# 🛡️ **RetailGuard AI — Real-Time Civic Theft Detection**
 
-> **An intelligent surveillance system** that detects shoplifting behavior using **YOLOv8 Pose Estimation** and **XGBoost Classification**.  
-> Real-time detection of suspicious movements through human pose analysis — bringing AI vision to retail security.
-
----     
+**Behavioral AI • Pose-Based Monitoring • Community Protection • Open Source**
+**YOLOv8 • XGBoost • Streamlit • Computer Vision**
 
 <div align="center">
-
-| 🧠 **AI Model** | ⚙️ **Core Tech** | 🎯 **Domain** | 🚀 **Status** |
-|:---------------:|:----------------:|:-------------:|:-------------:|
-| YOLOv8-Pose + XGBoost | OpenCV, Pandas, NumPy | Smart Surveillance | ✅ Active Development |
-
+  <img src="https://img.shields.io/badge/AI-YOLOv8%20Pose-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Detection-Behavior%20Based-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Dashboard-Real--Time-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Backend-ML%20Pipeline-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
 </div>
 
 ---
 
-## 🧭 Table of Contents
+## 📚 Table of Contents
 
-- [🎥 Demo](#-demo)
-- [💡 Project Overview](#-project-overview)
-- [⚙️ How It Works](#️-how-it-works)
-- [🖼️ Features](#️-features)
-- [🧩 Requirements](#-requirements)
-- [🚀 Installation](#-installation)
-- [▶️ Usage](#️-usage)
-- [📁 Project Structure](#-project-structure)
-- [🧠 Why This Project](#-why-this-project)
-- [📜 License](#-license)
-- [🤝 Contributing](#-contributing)
-
----
-
-## 🎥 Demo
-
-> 🎬 **[Watch the Demo Video]*  
-*(Replace this link with your actual Google Drive demo video link — use “Anyone with link → Viewer” setting.)*
+* [Overview](#overview)
+* [The Civic Problem](#the-civic-problem)
+* [Core Experience](#core-experience)
+* [Detection Pipeline](#detection-pipeline)
+* [System Architecture](#system-architecture)
+* [Folder Structure](#folder-structure)
+* [Tech Stack](#tech-stack)
+* [Running Locally](#running-locally)
+* [Deployment](#deployment)
+* [Ethical Design](#ethical-design)
+* [Why RetailGuard AI?](#why-retailguard-ai)
 
 ---
 
-## 💡 Project Overview
+## 🌍 Overview
 
-This project implements a **shoplifting detection system** that monitors surveillance video in real-time.  
-Using **YOLOv8 Pose Estimation**, it captures human joint positions, and through **XGBoost classification**, it identifies abnormal or suspicious behavior.
+RetailGuard AI is an open-source, civic-focused retail security system designed to help small businesses detect suspicious shoplifting behavior using real-time computer vision.
 
-It merges **computer vision** and **machine learning** to provide a cost-effective, scalable, and intelligent store security solution.
+It does not identify people.
 
-> “We didn’t just detect movement — we taught machines to understand human intent.”
+It analyzes **behavioral patterns**.
 
----
+Using pose estimation and machine learning, the system detects unusual body movements and logs suspicious activity to a monitoring dashboard.
 
-## ⚙️ How It Works
+Built to be:
 
-1. **Pose Detection:**  
-   YOLOv8 extracts skeletal keypoints (body joints) from live video frames.
-
-2. **Feature Extraction:**  
-   These keypoints are converted into feature vectors representing human posture and motion.
-
-3. **Behavior Classification:**  
-   An XGBoost model classifies the detected action as **Normal** or **Suspicious**.
-
-4. **Real-Time Output:**  
-   OpenCV displays live bounding boxes, labels, and confidence levels on the video feed.
+* Affordable
+* Transparent
+* Deployable on standard hardware
+* Open for community improvement
 
 ---
 
-## 🖼️ Features
+## 🏪 The Civic Problem
 
-✅ Real-time human pose detection using YOLOv8  
-✅ Behavior classification with XGBoost  
-✅ Works with webcam or recorded video  
-✅ Interactive visualization using OpenCV  
-✅ Custom dataset creation and retraining supported  
-✅ Scalable for multi-camera surveillance systems  
+Retail theft disproportionately impacts small and community-owned businesses.
+
+Enterprise surveillance systems are:
+
+* Expensive
+* Closed-source
+* Designed for large corporations
+
+RetailGuard AI provides:
+
+* An open alternative
+* Behavior-based detection
+* Transparent ML logic
+* Deployable without enterprise infrastructure
+
+This is not corporate AI.
+This is civic AI.
 
 ---
 
-## 🧩 Requirements
+## 🎯 Core Experience
+
+1. User uploads video or connects live feed
+2. System detects human pose using YOLOv8
+3. Behavioral features are extracted
+4. ML classifier predicts suspicious vs normal
+5. Dashboard logs incidents in real time
+6. Alerts are stored for review
+
+The system operates continuously and independently.
+
+---
+
+## 🧠 Detection Pipeline
+
+### 🧍 1. Pose Estimation
+
+* YOLOv8 Pose detects key body joints
+* Extracts spatial coordinates of human posture
+* Runs frame-by-frame analysis
+
+### 📊 2. Feature Extraction
+
+* Joint angles
+* Body alignment
+* Sudden motion changes
+* Hand-object interaction patterns
+
+### 🤖 3. Behavioral Classification
+
+* XGBoost classifier
+* Binary classification:
+
+  * Suspicious
+  * Normal
+* Trained on extracted pose-based dataset
+
+### 📋 4. Incident Logging
+
+* Real-time dashboard
+* Event summaries
+* Stored suspicious timestamps
+* Alert visualization
+
+---
+
+## 🏗️ System Architecture
+
+
+
+<img width="1536" height="1024" alt="ChatGPT Image Mar 3, 2026, 06_02_33 AM" src="https://github.com/user-attachments/assets/bd2f7cc3-b789-408e-a8f0-4bf942ee881e" />
+
+
+
+
+
+
+
+### Flow:
+
+```
+Video Input
+    ↓
+YOLOv8 Pose Estimation
+    ↓
+Feature Engineering
+    ↓
+XGBoost Classifier
+    ↓
+Real-Time Dashboard + Incident Log
+```
+
+The system separates:
+
+* Vision detection
+* Feature computation
+* ML decision logic
+* Visualization layer
+
+Modular and extensible.
+
+---
+
+## 📁 Folder Structure
+
+```text
+RetailGuard-AI/
+├─ README.md
+│
+├─ dashboardfinal.py
+│   ├─ Streamlit UI
+│   ├─ Video upload handling
+│   ├─ Real-time alert rendering
+│   └─ Incident logging interface
+│
+├─ model.py
+│   ├─ Feature extraction logic
+│   ├─ XGBoost loading
+│   └─ Prediction pipeline
+│
+├─ trained_model.json
+│   └─ Trained XGBoost model
+│
+├─ requirements.txt
+│
+└─ assets/
+    ├─ alert sounds
+    └─ sample test video
+```
+
+---
+
+## 🧪 Tech Stack
+
+### Computer Vision
+
+* YOLOv8 Pose (Ultralytics)
+* OpenCV (Headless)
+
+### Machine Learning
+
+* XGBoost
+* Scikit-learn
+* NumPy
+* Pandas
+
+### Interface
+
+* Streamlit (real-time dashboard)
+
+### Deployment
+
+* Streamlit Cloud / Render
+
+---
+
+## ▶ Running Locally
 
 ```bash
-Python 3.11+
-OpenCV
-Ultralytics YOLO
-XGBoost
-Pandas
-NumPy
-cvzone
-
-Installation
-
-Clone the repository
-
-git clone [your-repo-url]
-cd [repo-name]
-
-
-Create and activate a virtual environment
+git clone https://github.com/your-username/RetailGuard-AI.git
+cd RetailGuard-AI
 
 python -m venv venv
-# Windows
-.\venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
-
-
-Install dependencies
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
+streamlit run dashboardfinal.py
+```
 
-▶️ Usage
+Open:
 
-Create Dataset
+```
+http://localhost:8501
+```
 
-python datset.py
+---
+
+## 🌐 Deployment
+
+### Recommended
+
+Deploy on:
+
+* Streamlit Community Cloud
+* Render (optional full-stack hosting)
+
+Ensure:
+
+* runtime.txt → python-3.11
+* opencv-python-headless
+* CPU-compatible torch
+
+---
+
+## 🔐 Ethical Design
+
+RetailGuard AI:
+
+* Does NOT use facial recognition
+* Does NOT store biometric identity
+* Detects behavioral anomalies only
+* Designed for privacy-conscious monitoring
+* Fully open-source for transparency
+
+The goal is protection — not surveillance profiling.
+
+---
+
+## 🎯 Use Cases
+
+* Small retail shops
+* Community stores
+* Local markets
+* Civic safety research
+* Behavioral AI experimentation
+* Hackathon social good projects
+
+---
+
+## 📸 Screenshots
 
 
-Collect normal and suspicious pose data from video frames.
-
-Train Model
-
-python model.py
+## Dashboard
 
 
-Train an XGBoost classifier using the extracted dataset.
-
-Run Real-Time Detection
-
-python main.py
 
 
-Launches live detection and visualization.
-Press ‘q’ to quit the application.
-
-📁 Project Structure
-shoplifting-detection-yolo/
-├── main.py               # Main application for real-time detection
-├── dataset.py            # Dataset creation and preprocessing
-├── model.py              # XGBoost model training
-├── Normal.py             # Normal behavior data collection
-├── Suspicious.py         # Suspicious behavior data collection
-├── requirements.txt      # Dependencies
-└── README.md             # Documentation
-
-🧠 Why This Project
-
-Retail theft leads to billions in global losses every year.
-This project aims to provide a non-invasive, AI-based surveillance system that helps detect suspicious actions automatically and assist human security operators.
-
-Goal: To make retail spaces safer using ethical and intelligent AI vision.
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/4a6f0a15-75e5-422e-809e-c3a60e5a2adb" />
 
 
-🤝 Contributing
-
-Contributions are always welcome!
-If you’d like to improve detection accuracy, optimize models, or enhance visualization — please open an issue or submit a pull request.
-
-Built with Intelligence. Secured with Vision.
 
 
-Testing SSH verified commit
 
-Testing verified commit final
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/db3070b5-b25a-4d2a-bf97-338c982b1b1c" />
+
+
+
+
+
+
+
+## NORMAL BEHAVIOUR
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/216843b1-e92f-445f-b6bd-63ab643461aa" />
+
+
+
+
+
+
+## SUSPICIOUS BEHAVIOUR
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/d632ea0d-d9ab-49e7-98df-f41c0d3c8af0" />
+
+
+
+
+
+## ALERTS AND CAPTURED FRAMES 
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/05209f8b-9fa0-4575-a0da-0c7c3175dd4b" />
+
+
+
+
+
+
+
+---
+
+## 💭 Why RetailGuard AI?
+
+> “Protection should not be exclusive to corporations.”
+
+RetailGuard AI explores what happens when:
+
+* Security is made open
+* Behavioral AI is transparent
+* Detection avoids identity profiling
+* Small businesses gain access to intelligent tools
+
+It is not about surveillance.
+
+It is about community resilience.
+
+---
+
+<p align="center" style="font-size:18px; color:#2563eb;">
+  <i><b>“Behavior speaks. We listen.”</b></i>
+</p>
+
+---
+
