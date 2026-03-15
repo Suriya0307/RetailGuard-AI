@@ -348,7 +348,6 @@ The goal is protection — not surveillance profiling.
 
 RetailGuard AI explores what happens when:
 
-* Security is made open
 * Behavioral AI is transparent
 * Detection avoids identity profiling
 * Small businesses gain access to intelligent tools
