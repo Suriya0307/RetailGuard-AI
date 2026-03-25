@@ -97,6 +97,7 @@ def detect_shoplifting(video_path):
         # Show the annotated frame in a window
         cv2.imshow('Frame', annotated_frame)
 
+        if 
         # Increment frame counter
         frame_tot += 1
 
